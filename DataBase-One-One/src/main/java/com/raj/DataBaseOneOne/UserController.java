@@ -24,12 +24,15 @@ public class UserController {
     List<UserDto> findAllUsers() {
         List<UserDto> userDtos = new ArrayList<>();
         Iterable<User> users = userRepository.findAll();
+        users.forEach(u -> {
+            userDtos.add(userMapper.mapToDto(u));
+        });
 
-        while (users.iterator().hasNext()) {
-            User userItrator = users.iterator().next();
-            userDtos.add(userMapper.mapToDto(userItrator));
-            System.out.println(userDtos.iterator().next());
-        }
+//        while (users.iterator().hasNext()) {
+//            User userItrator = users.iterator().next();
+//            userDtos.add(userMapper.mapToDto(userItrator));
+//            System.out.println(userDtos.iterator().next());
+//        }
 //        userDtos = users.stream()
 //                .map(u -> userMapper.mapToDto(u))
 //                .collect(Collectors.toList());

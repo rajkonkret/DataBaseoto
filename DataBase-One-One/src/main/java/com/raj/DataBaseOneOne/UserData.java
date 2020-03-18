@@ -21,6 +21,7 @@ public class UserData implements CommandLineRunner {
 
         UserDetails userDetails = new UserDetails();
         userDetails.setAddress("Opole");
+        userDetails.setPesel("750827");
         user.setUserDetails(userDetails);
 
         userRepository.save(user);
