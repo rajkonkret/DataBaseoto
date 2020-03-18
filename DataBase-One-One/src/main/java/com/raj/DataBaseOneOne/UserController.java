@@ -23,16 +23,16 @@ public class UserController {
         //@ResponseBody
     List<UserDto> findAllUsers() {
         List<UserDto> userDtos = new ArrayList<>();
-        List<User> users = userRepository.findAll();
+        Iterable<User> users = userRepository.findAll();
 
-//        while (users.iterator().hasNext()) {
-//            User userItrator = users.iterator().next();
-//            userDtos.add(userMapper.mapToDto(userItrator));
-//            System.out.println(userDtos.iterator().next());
-//        }
-        userDtos = users.stream()
-                .map(u -> userMapper.mapToDto(u))
-                .collect(Collectors.toList());
+        while (users.iterator().hasNext()) {
+            User userItrator = users.iterator().next();
+            userDtos.add(userMapper.mapToDto(userItrator));
+            System.out.println(userDtos.iterator().next());
+        }
+//        userDtos = users.stream()
+//                .map(u -> userMapper.mapToDto(u))
+//                .collect(Collectors.toList());
         return userDtos;
 
     }

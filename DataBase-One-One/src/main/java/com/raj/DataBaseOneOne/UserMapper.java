@@ -7,10 +7,19 @@ public class UserMapper {
 
     public UserDto mapToDto(User user){
         UserDto userDto = new UserDto();
+        UserDetailsId userDetailsId = new UserDetailsId();
+
         userDto.setId(user.getId());
         userDto.setEmail(user.getEmail());
         userDto.setUsername(user.getUsername());
-        userDto.setUserDetailsId(user.getUserDetails().getId());
+
+        userDetailsId.setPesel(user.getUserDetails().getPesel());
+        userDetailsId.setId(user.getUserDetails().getId());
+        userDetailsId.setUserName(user.getUserDetails().getUser().getUsername());
+
+        userDto.setUserDetailsId(
+                userDetailsId
+        );
         return userDto;
     }
 }

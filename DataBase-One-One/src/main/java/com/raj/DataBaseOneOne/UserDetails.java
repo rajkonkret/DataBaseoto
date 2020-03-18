@@ -26,6 +26,6 @@ public class UserDetails {
 
     //@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, mappedBy = "userDetails")
     @OneToOne(mappedBy = "userDetails")
-    @JoinColumn(name = "user_id")
+    //@JoinColumn(name = "user_id")
     private User user;
 }
