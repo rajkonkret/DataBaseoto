@@ -25,7 +25,7 @@ public class Offer {
 
         try {
             Document document = Jsoup.connect(http).get();
-            return "Cena z klasy: " + document.getElementsByClass("price-label").text();
+            return "Cena z klasy: " + document.getElementsByClass("pricelabel").text();
         } catch (IOException e) {
             e.printStackTrace();
         }
