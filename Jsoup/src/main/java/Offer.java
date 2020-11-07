@@ -6,10 +6,12 @@ public class Offer {
     private String name;
     private String http;
     private String price;
+    private String description;
 
-    Offer(String name, String http) {
+    Offer(String name, String http, String descr) {
         this.name = name;
         this.http = http;
+        this.description = descr;
     }
 
 
@@ -18,6 +20,8 @@ public class Offer {
         return "Offer{" +
                 "name='" + name + '\'' +
                 ", http='" + http + '\'' +
+                ", price='" + price + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 
